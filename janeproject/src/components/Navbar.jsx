@@ -7,7 +7,7 @@ class NavBar extends Component {
     console.log(this);
     const {path}=this.props
      return (
-      <Menu >
+      <Menu style={{marginTop: "0px!important"}}>
         <Menu.Menu>
           <Menu.Item onClick={() => browserHistory.push('/')}>
             PokeJane

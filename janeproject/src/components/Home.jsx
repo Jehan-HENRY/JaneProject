@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import NavBar from './Navbar.jsx';
 // import background from '../img/welcome.jpg';
-import {Image} from "semantic-ui-react"
+import {Image, Button} from "semantic-ui-react"
 import welcome1 from "../img/welcome1.png";
 import welcome2 from "../img/welcome2.png";
+import header from "../img/header.png";
+import star from "../img/star.png";
 class Home extends Component {
   constructor() {
     super()
@@ -32,9 +34,13 @@ class Home extends Component {
           : "welcome2bis"} onClick={()=>this.toggle()} src={welcome2} style={{
           height: "100vh"
         }}/> {/* <Image src={background} style={{height:"100vh"}} fluid/> */}
+        <div className="wallpaper">
         <NavBar path={path}/>
-        <h1>
-          i'm the home</h1>
+        >
+      <Image className="title" src={header}/>
+      <Image className="star" src={star}/>
+        <Button color="black" size="massive" circular icon='settings' />
+    </div>
       </div>
     )
   }
