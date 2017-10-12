@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import NavBar from './Navbar.jsx';
 
 class Home extends Component {
-	render() {
-    console.log(this)
-		return (
-			<div>
-
-				<h1>i'm the layout</h1>
-			</div>
-		);
-	}
+  render() {
+    const {path} = this.props.route
+    console.log(this);
+    return (
+      <div >
+        <NavBar path={path}/>
+        <h1>
+          i'm the home</h1>
+      </div>
+    )
+  }
 }
 
 export default Home;
