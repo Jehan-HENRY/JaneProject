@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component, PropTypes} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
-    const {children, location} =this.props
+    console.log(this)
+    const {children} =this.props
     return (
       <div className="App">
         <header className="App-header">
@@ -17,6 +18,10 @@ class App extends Component {
       </div>
     );
   }
+}
+App.propTypes ={
+children: PropTypes.element.isRequired,
+location: PropTypes.object.isRequired,
 }
 
 export default App;
