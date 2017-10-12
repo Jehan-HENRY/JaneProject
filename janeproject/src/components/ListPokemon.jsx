@@ -10,22 +10,40 @@ class ListPokemon extends Component {
   }
 
   componentDidMount() {
-    fetch(urlForPokemon()).then(d => d.json()).then(d => {
-      this.setState({
-        pokemonData: d
-      });
-    });
+    fetch(urlForPokemon())
+      .then(response => {
+        if (!response.ok) {
+          throw Error("Les Pokémon ne sont pas venus, ils boudent...");
+        }
+        return response;
+      })
+      .then(d => d.json())
+      .then(
+        d => {
+          this.setState({
+            pokemonData: d
+          });
+        },
+        () => {
+          this.setState({
+            requestFailed: true
+          });
+        }
+      );
   }
   render() {
     console.log(this);
-    if (!this.state.pokemonData) return <p>Loading...</p>;
+    if (this.state.requestFailed) return <p>Mince ça marche pas...</p>;
+    if (!this.state.pokemonData) return <p>Chargement...</p>;
     return (
       <div>
         <List>
-        {this.state.pokemonData.results.map((pokemon, index) =>
-            <List.Item key={index} value={pokemon.name}>{pokemon.name}</List.Item>
-        )}
-      </List>
+          {this.state.pokemonData.results.map((pokemon, index) =>
+            <List.Item key={index} value={pokemon.name}>
+              {pokemon.name}
+            </List.Item>
+          )}
+        </List>
       </div>
     );
   }
