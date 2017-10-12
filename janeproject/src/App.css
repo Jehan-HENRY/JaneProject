@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.ListSegment {
+  margin: 3vw;
+}
+
+.ListGrid {
+  padding-left: 3vw;
+}

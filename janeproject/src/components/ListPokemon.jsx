@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { List } from "semantic-ui-react";
+import { Grid, Segment, Header } from "semantic-ui-react";
 
 const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=60/`;
+
+const square = { width: 175, height: 175 };
 
 class ListPokemon extends Component {
   constructor(props) {
@@ -36,15 +38,23 @@ class ListPokemon extends Component {
     if (this.state.requestFailed) return <p>Mince ça marche pas...</p>;
     if (!this.state.pokemonData) return <p>Chargement...</p>;
     return (
-      <div>
-        <List>
-          {this.state.pokemonData.results.map((pokemon, index) =>
-            <List.Item key={index} value={pokemon.name}>
-              {pokemon.name}
-            </List.Item>
-          )}
-        </List>
-      </div>
+      <Segment className="ListSegment">
+        <Grid className="ListGrid">
+          <Grid.Row columns={5}>
+            <br />
+            {this.state.pokemonData.results.map((pokemon, index) =>
+              <Grid.Column key={index}>
+                <Segment key={index} circular style={square}>
+                  <Header as="h3">
+                    {pokemon.name}
+                    <Header.Subheader>ID 1234</Header.Subheader>
+                  </Header>
+                </Segment>
+              </Grid.Column>
+            )}
+          </Grid.Row>
+        </Grid>
+      </Segment>
     );
   }
 }
