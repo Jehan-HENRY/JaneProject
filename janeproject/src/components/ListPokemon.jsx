@@ -50,14 +50,14 @@ class ListPokemon extends Component {
   }
 
   render() {
-    console.log(this);
-    if (this.state.requestFailed) return <p>Mince ça marche pas...</p>;
-    if (!this.state.pokemonData) return <p>Chargement...</p>;
     const { path } = this.props.route;
     return (
       <div>
         <NavBar path={path} />
+        {this.state.requestFailed ? <p>Mince ça marche pas...</p>:
         <Segment className="ListSegment">
+          {!this.state.pokemonData ?
+            <p>Chargement...</p> :
           <Grid className="ListGrid">
             <Grid.Row columns={6}>
               <br />
@@ -82,7 +82,9 @@ class ListPokemon extends Component {
               )}
             </Grid.Row>
           </Grid>
+        }
         </Segment>
+      }
       </div>
     );
   }

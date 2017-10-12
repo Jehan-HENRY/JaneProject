@@ -31,7 +31,7 @@
 .sovietFooter {
   position: fixed;
   bottom: 0!important;
-  background-color: #b10000!important;
+  background-color: black;
   font-weight: 400;
   color: yellow!important;
 }
@@ -44,24 +44,23 @@
   color: yellow!important;
 }
 
-
-/*.one{
-    width: 46px;
-    height: 44px;
-    background: url('../img/welcome.jpg') 0 0;
+.pusher {
+  cursor: pointer;
+  width: 15vw;
+  margin-left: 42vw;
+  margin-top: 15vh;
+  position: sticky;
 }
-.two{
-    width: 46px;
-    height: 44px;
-    background: url('../img/welcome.jpg') 0 0;
-}*/
 
+.paraph {
+  font-size: 9em;
+}
 .welcome1 {
   z-index: 999;
   position: absolute!important;
   height: 100vh;
   margin-left: 0vw;
-  width: 50.5vw;
+  width:  50.581vw;
   margin-top: -3vh;
   -webkit-transition: 1s;
   -o-transition: 1s;
@@ -73,15 +72,12 @@
 .welcome2 {
   z-index: 999;
   position: absolute!important;
-  margin-left: 49vw;
+  margin-left: 49.815vw;
   margin-top: -3vh;
   height: 100vh;
   width: 51vw;
   margin-top: -3vh;
   -webkit-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  -moz-transition: 1s;
   transition: 1s;
 }
 
@@ -89,7 +85,7 @@
   z-index: 999;
   position: absolute!important;
   height: 100vh;
-  margin-left: -50vw;
+  margin-left: -53vw;
   width: 50.5vw;
   -webkit-transition: 1s;
   -o-transition: 1s;
@@ -101,7 +97,7 @@
 .welcome2bis {
   z-index: 999;
   position: absolute!important;
-  margin-left: 100vw;
+  margin-left: 105vw;
   height: 100vh;
   width: 51vw;
   -webkit-transition: 1s;
@@ -119,16 +115,18 @@
 }
 
 .star {
-    animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 20s linear;
   position: absolute;
   margin-top: -40vh;
   margin-left: 66vw;
   height: 24vh;
 }
+
 .title {
   width: 50vw;
-margin-left: 23vw;
+  margin-left: 23vw;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
