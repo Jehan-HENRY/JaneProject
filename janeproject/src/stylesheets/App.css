@@ -121,7 +121,7 @@
 }
 
 .ListSegment {
-  margin: 3vw !important;
+  margin: 2vh 3vw 5vh 3vw !important;
 }
 
 .ListGrid {
@@ -131,14 +131,14 @@
 .ListItemHeader {
   margin-top: -3vh !important;
   position: absolute;
-  left: 3.5vw;
+  left: 0;
+  right: 0;
 }
 
 .ListItemImage {
-  margin-left: 1vw !important;
-  margin-bottom: 1vh !important;
+  margin-left: 0.8vw !important;
+  margin-bottom: 2vh !important;
   margin-top: -2vh !important;
-  opacity:1 !important;
 }
 
 .ListPokeball {
@@ -151,4 +151,8 @@
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.ListSearch{
+  border-radius: 2vw;
 }
