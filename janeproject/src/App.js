@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Input, Button } from 'semantic-ui-react';
 
 class App extends Component {
   render() {
