@@ -3,7 +3,6 @@ import { Router,Route, IndexRoute } from 'react-router';
 // import {history} from './redux/store';
  import {browserHistory} from 'react-router';
 import App from './App';
-import Welcome from './components/Welcome.jsx';
 import Home from './components/Home.jsx';
 import ListPokemon from './components/ListPokemon.jsx';
 import Card from './components/Card.jsx';
