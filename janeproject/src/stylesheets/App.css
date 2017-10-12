@@ -137,3 +137,40 @@ margin-left: 23vw;
     transform: rotate(360deg);
   }
 }
+
+.ListSegment {
+  margin: 2vh 3vw 5vh 3vw !important;
+}
+
+.ListGrid {
+  padding-left: 0.5vw !important;
+}
+
+.ListItemHeader {
+  margin-top: -3vh !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.ListItemImage {
+  margin-left: 0.8vw !important;
+  margin-bottom: 2vh !important;
+  margin-top: -2vh !important;
+}
+
+.ListPokeball {
+  background-image: url("../img/pokeball.png") !important;
+  background-size: cover !important;
+  opacity:0.4;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ListSearch{
+  border-radius: 2vw;
+}
