@@ -3,8 +3,8 @@ import { Router,Route, IndexRoute } from 'react-router';
 // import {history} from './redux/store';
  import {browserHistory} from 'react-router';
 import App from './App';
+import Welcome from './components/Welcome.jsx';
 import Home from './components/Home.jsx';
-import MainView from './components/MainView.jsx';
 import ListPokemon from './components/ListPokemon.jsx';
 import Card from './components/Card.jsx';
 
@@ -12,8 +12,8 @@ import Card from './components/Card.jsx';
 export default() => (
   <Router history={browserHistory}>
   <Route path='/' component={App}>
-  <IndexRoute component={Home}/>
-  <Route path='home' component={MainView}/>
+  <IndexRoute component={Welcome}/>
+  <Route path='home' component={Home}/>
   <Route path='list' component={ListPokemon}/>
   <Route path='card' component={Card}/>
 </Route>

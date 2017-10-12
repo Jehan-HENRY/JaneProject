@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'kremlin';
+  src: local('kremlin'), url(./kremlin.ttf) format('ttf');
+}
 .App {
   text-align: center;
+  font-family: kremlin;
 }
 
 .App-logo {
@@ -22,6 +27,18 @@
   font-size: large;
 }
 
+.sovietFooter {
+  position: fixed;
+  bottom: 0!important;
+  background-color: #b10000!important;
+  font-weight: 400;
+  color: yellow!important;
+}
+#clip {
+  position: absolute;
+  clip: rect(0, 100px, 200px, 0);
+  /* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,7 +53,7 @@
 }
 
 .ListGrid {
-  padding-left: 3vw !important;
+  padding-left: 0.5vw !important;
 }
 
 .ListItemHeader {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Segment, Header, Image } from "semantic-ui-react";
+import NavBar from "./Navbar.jsx";
 
 const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=811/`;
 
@@ -37,39 +38,52 @@ class ListPokemon extends Component {
   }
 
   capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   generateImage(id) {
-      return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png"
+    return (
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
+      id +
+      ".png"
+    );
   }
 
   render() {
     console.log(this);
     if (this.state.requestFailed) return <p>Mince ça marche pas...</p>;
     if (!this.state.pokemonData) return <p>Chargement...</p>;
+    const { path } = this.props.route;
     return (
-      <Segment className="ListSegment">
-        <Grid className="ListGrid">
-          <Grid.Row columns={5}>
-            <br />
-            {this.state.pokemonData.results.map((pokemon, index) =>
-              <Grid.Column key={index}>
-                <Segment key={index} circular style={square}>
-                  <Image className="ListItemImage" src={this.generateImage(pokemon.url.match(/([0-9]+)/g)[1])} />
-                  <Header className="ListItemHeader" as="h3">
-                    {this.capitalizeFirstLetter(pokemon.name)}
-                    <Header.Subheader>
-                      ID {pokemon.url.match(/([0-9]+)/g)[1]}
-                    </Header.Subheader>
-                  </Header>
-                </Segment>
-                <br />
-              </Grid.Column>
-            )}
-          </Grid.Row>
-        </Grid>
-      </Segment>
+      <div>
+        <NavBar path={path} />
+        <Segment className="ListSegment">
+          <Grid className="ListGrid">
+            <Grid.Row columns={6}>
+              <br />
+              {this.state.pokemonData.results.map((pokemon, index) =>
+                <Grid.Column key={index}>
+                  <Segment key={index} circular style={square}>
+                    <Image
+                      className="ListItemImage"
+                      src={this.generateImage(
+                        pokemon.url.match(/([0-9]+)/g)[1]
+                      )}
+                    />
+                    <Header className="ListItemHeader" as="h3">
+                      {this.capitalizeFirstLetter(pokemon.name)}
+                      <Header.Subheader>
+                        ID {pokemon.url.match(/([0-9]+)/g)[1]}
+                      </Header.Subheader>
+                    </Header>
+                  </Segment>
+                  <br />
+                </Grid.Column>
+              )}
+            </Grid.Row>
+          </Grid>
+        </Segment>
+      </div>
     );
   }
 }
