@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { List } from "semantic-ui-react";
+import NavBar from './Navbar.jsx';
 
 const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=60/`;
 
@@ -35,8 +36,10 @@ class ListPokemon extends Component {
     console.log(this);
     if (this.state.requestFailed) return <p>Mince ça marche pas...</p>;
     if (!this.state.pokemonData) return <p>Chargement...</p>;
+    const {path} = this.props.route
     return (
       <div>
+            <NavBar path={path}/>
         <List>
           {this.state.pokemonData.results.map((pokemon, index) =>
             <List.Item key={index} value={pokemon.name}>
