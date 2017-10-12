@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Segment, Header, Image } from "semantic-ui-react";
+import { Grid, Segment, Header, Image, Input } from "semantic-ui-react";
 import NavBar from "./Navbar.jsx";
 
 const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=811`;
@@ -9,9 +9,14 @@ const square = { width: 175, height: 175 };
 class ListPokemon extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      search: ""
+    };
     this.capitalizeFirstLetter = this.capitalizeFirstLetter.bind(this);
     this.generateImage = this.generateImage.bind(this);
+    this.updateInput = this.updateInput.bind(this);
+    this.updateResult = this.updateResult.bind(this);
+    this.pokemonFilter = this.pokemonFilter.bind(this);
   }
 
   componentDidMount() {
@@ -49,12 +54,49 @@ class ListPokemon extends Component {
     );
   }
 
+  updateInput(event) {
+    this.setState(
+      {
+        search: event.target.value
+      },
+      () => {
+        this.updateResult;
+      }
+    );
+  }
+
+  updateResult() {
+    this.setState({
+      pokemonData: this.state.pokemonData.results.filter(this.pokemonFilter)
+    });
+  }
+
+  pokemonFilter(pokemon) {
+    return (
+      pokemon.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+    );
+  }
+
   render() {
+
+
     const { path } = this.props.route;
     return (
       <div>
         <NavBar path={path} />
+
         {this.state.requestFailed ? <p>Mince ça marche pas...</p>:
+<div>
+        <Input
+          className="ListSearch"
+          size="large"
+          icon="search"
+          type="text"
+          placeholder="Chercher..."
+          value={this.state.search}
+          onChange={this.updateInput}
+        />
+
         <Segment className="ListSegment">
           {!this.state.pokemonData ?
             <p>Chargement...</p> :
@@ -64,6 +106,7 @@ class ListPokemon extends Component {
               {this.state.pokemonData.results.map((pokemon, index) =>
                 <Grid.Column key={index}>
                   <Segment key={index} circular style={square}>
+                    <div className="ListPokeball" />
                     <Image
                       className="ListItemImage"
                       src={this.generateImage(
@@ -84,6 +127,7 @@ class ListPokemon extends Component {
           </Grid>
         }
         </Segment>
+  </div>
       }
       </div>
     );
