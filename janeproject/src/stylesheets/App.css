@@ -2,6 +2,7 @@
   font-family: 'kremlin';
   src: local('kremlin'), url(./kremlin.ttf) format('ttf');
 }
+
 .App {
   text-align: center;
   font-family: kremlin;
@@ -34,11 +35,82 @@
   font-weight: 400;
   color: yellow!important;
 }
-#clip {
-  position: absolute;
-  clip: rect(0, 100px, 200px, 0);
-  /* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
+
+.navbar {
+  position: fixed;
+  top: 0!important;
+  background-color: #b10000!important;
+  font-weight: 400;
+  color: yellow!important;
 }
+
+
+/*.one{
+    width: 46px;
+    height: 44px;
+    background: url('../img/welcome.jpg') 0 0;
+}
+.two{
+    width: 46px;
+    height: 44px;
+    background: url('../img/welcome.jpg') 0 0;
+}*/
+
+.welcome1 {
+  z-index: 999;
+  position: absolute!important;
+  height: 100vh;
+  margin-left: 0vw;
+  width: 50.5vw;
+  margin-top: -3vh;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+
+.welcome2 {
+  z-index: 999;
+  position: absolute!important;
+  margin-left: 49vw;
+  margin-top: -3vh;
+  height: 100vh;
+  width: 51vw;
+  margin-top: -3vh;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+
+.welcome1bis {
+  z-index: 999;
+  position: absolute!important;
+  height: 100vh;
+  margin-left: -50vw;
+  width: 50.5vw;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+
+.welcome2bis {
+  z-index: 999;
+  position: absolute!important;
+  margin-left: 100vw;
+  height: 100vh;
+  width: 51vw;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
