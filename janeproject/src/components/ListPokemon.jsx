@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Grid, Segment, Header, Image } from "semantic-ui-react";
 import NavBar from "./Navbar.jsx";
 
-const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=811/`;
+const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=811`;
 
 const square = { width: 175, height: 175 };
 

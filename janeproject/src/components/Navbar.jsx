@@ -17,7 +17,7 @@ class NavBar extends Component {
           <Menu.Item active={path === 'list'} onClick={() => browserHistory.push('/list')}>
             Liste
           </Menu.Item>
-          <Menu.Item active={path === 'home'} onClick={() => browserHistory.push('/Home')}>
+          <Menu.Item active={path === '/'} onClick={() => browserHistory.push('/')}>
             Accueil
           </Menu.Item>
         </Menu.Menu>
