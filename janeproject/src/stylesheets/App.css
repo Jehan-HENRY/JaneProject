@@ -111,6 +111,24 @@
   transition: 1s;
 }
 
+.wallpaper {
+  background-color: firebrick;
+  height: 61vh;
+  border-bottom: solid 43px;
+  border-color: black;
+}
+
+.star {
+    animation: App-logo-spin infinite 20s linear;
+  position: absolute;
+  margin-top: -40vh;
+  margin-left: 66vw;
+  height: 24vh;
+}
+.title {
+  width: 50vw;
+margin-left: 23vw;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -118,22 +136,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.ListSegment {
-  margin: 3vw !important;
-}
-
-.ListGrid {
-  padding-left: 0.5vw !important;
-}
-
-.ListItemHeader {
-  margin-top: -3vh !important;
-}
-
-.ListItemImage {
-  margin-left: 1vw !important;
-  margin-bottom: 1vh !important;
-  margin-top: -2vh !important;
 }
