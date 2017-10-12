@@ -64,6 +64,7 @@ class ListPokemon extends Component {
               {this.state.pokemonData.results.map((pokemon, index) =>
                 <Grid.Column key={index}>
                   <Segment key={index} circular style={square}>
+                    <div className="ListPokeball"></div>
                     <Image
                       className="ListItemImage"
                       src={this.generateImage(
