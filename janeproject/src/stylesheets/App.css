@@ -127,9 +127,11 @@
   color: white!important;
   font-weight: 900!important;
 }
+
 .spinner {
   margin-left: 26vw;
 }
+
 .bigId {
   text-align: left;
   color: white;
@@ -144,6 +146,16 @@
   font-size: 4em;
   margin-bottom: -5vh;
   margin-left: 14vw;
+}
+
+.bigDes {
+  text-align: justify;
+  color: white;
+  font-size: 3em;
+  margin-bottom: -5vh;
+  margin-left: 54vw;
+  position: absolute;
+  margin-right: 5vw;
 }
 
 .cardo {
@@ -202,7 +214,7 @@
 .ListPage {
   background-image: url("../img/background.jpg") !important;
   background-position: right !important;
-  background-repeat: no-repeat !important ;
+  background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   margin-top: -2vh;
@@ -215,9 +227,11 @@
 .ListGrid {
   padding-left: 0.5vw !important;
 }
+
 .ListSearch {
   margin-top: 2vh;
 }
+
 .ListItemHeader {
   margin-top: -3vh !important;
   position: absolute;
@@ -251,5 +265,4 @@
 .ListButton {
   background-color: Transparent !important;
   color: black !important;
-
 }
