@@ -154,19 +154,25 @@
   }
 }
 
+.ListPage {
+  background-image: url("../img/background.jpg") !important;
+  background-position: right !important;
+  background-repeat: no-repeat !important ;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  margin-top: -2vh;
+}
+
 .ListSegment {
   margin: 2vh 3vw 5vh 3vw !important;
-  /*background-image: url("../img/background2.jpg") !important;*/
-  /*background-position: right !important;*/
-  /*background-repeat: no-repeat !important ;
-  background-attachment: fixed !important;
-  background-size: cover !important;*/
 }
 
 .ListGrid {
   padding-left: 0.5vw !important;
 }
-
+.ListSearch {
+  margin-top: 2vh;
+}
 .ListItemHeader {
   margin-top: -3vh !important;
   position: absolute;
@@ -199,14 +205,6 @@
   border-radius: 2vw;
 }
 .ListButton {
-  position: absolute;
-  z-index: 1;
-  height: 27vh !important;
-  width: 13vw !important;
-  border-radius: 7vw !important;
-  right: -0.4vw !important;
-  bottom: 0vh;
-}
-.ui.basic.button:hover, .ui.basic.buttons .button:hover {
-  background: #11ffee00 !important;
+  background-color: Transparent !important;
+  color: black !important;
 }

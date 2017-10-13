@@ -34,6 +34,28 @@ class CardPokemon extends Component {
           });
         }
       );
+		const urlForSpePokemon = () =>
+		`https://pokeapi.co/api/v2/pokemon-species/` + this.props.location.state.pokemonID;
+    fetch(urlForSpePokemon())
+      .then(response => {
+        if (!response.ok) {
+          throw Error("Le Pokémon n'est pas venu, il boude...");
+        }
+        return response;
+      })
+      .then(d => d.json())
+      .then(
+        d => {
+          this.setState({
+            pokemonSpeData: d
+          });
+        },
+        () => {
+          this.setState({
+            requestFailed2: true
+          });
+        }
+      );
   }
 
 	generateImage(id) {
