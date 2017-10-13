@@ -22,18 +22,19 @@ class ListPokemon extends Component {
     this.pokemonFilter = this.pokemonFilter.bind(this);
   }
 
-  componentDidMount() {
-    fetch(urlForPokemon()).then(response => {
-      if (!response.ok) {
-        throw Error("Les Pokémon ne sont pas venus, ils boudent...");
-      }
-      return response;
-    }).then(d => d.json()).then(d => {
-      this.setState({pokemonData: d,filtered:d});
-    }, () => {
-      this.setState({requestFailed: true});
-    });
-  }
+componentDidMount() {
+  fetch(urlForPokemon()).then(response => {
+    if (!response.ok) {
+      throw Error("Les Pokémon ne sont pas venus, ils boudent...");
+    }
+    return response;
+  }).then(d => d.json()).then(d => {
+    this.setState({pokemonData: d, filtered: d});
+    console.log(this.state);
+  }, () => {
+    this.setState({requestFailed: true});
+  });
+}
 
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -51,8 +52,9 @@ class ListPokemon extends Component {
   updateResult() {
     let newRes = this.state.pokemonData.results.filter(this.pokemonFilter)
     this.setState({
-      filtered: newRes
-
+      filtered:{
+        results: newRes
+      } 
     })
   }
 
@@ -71,11 +73,11 @@ class ListPokemon extends Component {
               <Input className="ListSearch" size="large" icon="search" type="text" placeholder="Chercher..." value={this.state.search} onChange={this.updateInput}/>
 
               <Segment className="ListSegment">
-                {!this.state.pokemonData
+                {!this.state.filtered
                   ? <p>Chargement...</p>
                   : <Grid className="ListGrid">
                     <Grid.Row columns={6}>
-                      <br/> {this.state.filtered.map((pokemon, index) => <Grid.Column key={index}>
+                      <br/> {this.state.filtered.results.map((pokemon, index) => <Grid.Column key={index}>
                         <Segment key={index} circular style={square}>
                           <div className="ListPokeball"/>
                           <Image className="ListItemImage" src={this.generateImage(pokemon.url.match(/([0-9]+)/g)[1])}/>
