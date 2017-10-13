@@ -55,6 +55,7 @@
 .paraph {
   font-size: 9em;
 }
+
 .welcome1 {
   z-index: 999;
   position: absolute !important;
@@ -105,6 +106,23 @@
   -ms-transition: 3.5s;
   -moz-transition: 3.5s;
   transition: 3.5s;
+}
+
+.move {
+  -webkit-transition: 2.5s;
+  -o-transition: 2.5s;
+  -ms-transition: 2.5s;
+  -moz-transition: 2.5s;
+  transition: 2.5s;
+}
+
+.move2 {
+  margin-top: -100vh;
+  -webkit-transition: 2.5s;
+  -o-transition: 2.5s;
+  -ms-transition: 2.5s;
+  -moz-transition: 2.5s;
+  transition: 2.5s;
 }
 
 .wallpaper {
@@ -165,7 +183,9 @@
 .ListPokeball {
   background-image: url("../../public/favicon.png") !important;
   background-size: cover !important;
+
   opacity: 0.3;
+
   position: absolute;
   z-index: 0;
   top: 0;
