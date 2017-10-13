@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Grid, Segment, Header, Image, Input, Button } from "semantic-ui-react";
+import spinner from "../img/source.gif";
 import NavBar from "./Navbar.jsx";
 import { browserHistory } from "react-router";
 
@@ -74,7 +75,7 @@ componentDidMount() {
               <Input className="ListSearch" size="large" icon="search" type="text" placeholder="Chercher..." value={this.state.search} onChange={this.updateInput}/>
               <Segment className="ListSegment">
                 {!this.state.filtered
-                  ? <p>Chargement...</p>
+                  ? <Image className="spinner" src={spinner}></Image>
                   : <Grid className="ListGrid">
                     <Grid.Row columns={6}>
                       <br/> {this.state.filtered.results.map((pokemon, index) => <Grid.Column key={index}>
