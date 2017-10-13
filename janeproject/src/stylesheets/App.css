@@ -62,11 +62,11 @@
   margin-left: 0vw;
   width: 50.581vw;
   margin-top: -3vh;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  -moz-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 3.5s;
+  -o-transition: 3.5s;
+  -ms-transition: 3.5s;
+  -moz-transition: 3.5s;
+  transition: 3.5s;
 }
 
 .welcome2 {
@@ -77,8 +77,8 @@
   height: 100vh;
   width: 51vw;
   margin-top: -3vh;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 3.5s;
+  transition: 3.5s;
 }
 
 .welcome1bis {
@@ -87,11 +87,11 @@
   height: 100vh;
   margin-left: -53vw;
   width: 50.5vw;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  -moz-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 3.5s;
+  -o-transition: 3.5s;
+  -ms-transition: 3.5s;
+  -moz-transition: 3.5s;
+  transition: 3.5s;
 }
 
 .welcome2bis {
@@ -100,11 +100,11 @@
   margin-left: 105vw;
   height: 100vh;
   width: 51vw;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  -moz-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 3.5s;
+  -o-transition: 3.5s;
+  -ms-transition: 3.5s;
+  -moz-transition: 3.5s;
+  transition: 3.5s;
 }
 
 .wallpaper {

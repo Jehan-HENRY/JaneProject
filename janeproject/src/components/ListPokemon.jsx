@@ -5,13 +5,16 @@ import { browserHistory } from "react-router";
 
 const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=811`;
 
-const square = { width: 175, height: 175 };
+const square = {
+  width: 175,
+  height: 175
+};
 
 class ListPokemon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ""
+      search: "",
     };
     this.capitalizeFirstLetter = this.capitalizeFirstLetter.bind(this);
     this.generateImage = this.generateImage.bind(this);
@@ -48,11 +51,7 @@ class ListPokemon extends Component {
   }
 
   generateImage(id) {
-    return (
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-      id +
-      ".png"
-    );
+    return ("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png");
   }
 
   updateInput(event) {
@@ -67,15 +66,12 @@ class ListPokemon extends Component {
   }
 
   updateResult() {
+    let newRes = this.state.pokemonData.results.filter(this.pokemonFilter)
     this.setState({
-      pokemonData: this.state.pokemonData.results.filter(this.pokemonFilter)
-    });
-  }
-
-  pokemonFilter(pokemon) {
-    return (
-      pokemon.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
-    );
+      filtered:{
+        results: newRes
+      } 
+    })
   }
 
   render() {
@@ -147,5 +143,9 @@ class ListPokemon extends Component {
     );
   }
 }
+        </div>
+      );
+    }
+  }
 
-export default ListPokemon;
+  export default ListPokemon;
