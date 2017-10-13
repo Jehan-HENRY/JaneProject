@@ -7,20 +7,26 @@ import welcome2 from "../img/welcome4.png";
 import header from "../img/header.png";
 import star from "../img/star.png";
 import pusher from "../img/button.png";
+import audio from "../sounds/door.mp3"
 
 class Home extends Component {
   constructor() {
     super()
     this.state = {
-      visible: true
+      visible: true,
+      audio :new Audio(audio)
     }
+    this.toggle=this.toggle.bind(this)
   }
   componentWillMount(){
     if(this.props.location.state && this.props.location.state.visible===false ){
       this.setState({visible: false}) }
   }
+
+
   toggle() {
     this.setState({visible: false})
+    this.state.audio.play();
   }
 
   render() {
@@ -29,6 +35,7 @@ class Home extends Component {
     console.log(this);
     return (
       <div >
+        {/* <embed src="ton_fichier.mp3" autostart="true" loop="false" hidden="true"></embed> */}
         <Image className={visible
           ? "welcome1"
           : "welcome1bis"} onClick={()=>this.toggle()} src={welcome1} style={{
