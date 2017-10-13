@@ -108,6 +108,51 @@
   transition: 3.5s;
 }
 
+.cardpok {
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.bigName {
+  text-align: left;
+  color: white;
+  font-size: 9em;
+  margin-bottom: -4vh;
+  margin-top: 5vh!important;
+  margin-left: 14vw;
+}
+
+.fontNav {
+  color: white!important;
+  font-weight: 900!important;
+}
+.spinner {
+  margin-left: 26vw;
+}
+.bigId {
+  text-align: left;
+  color: white;
+  font-size: 6em;
+  margin-bottom: -1vh;
+  margin-left: 14vw;
+}
+
+.bigType {
+  text-align: left;
+  color: white;
+  font-size: 4em;
+  margin-bottom: -5vh;
+  margin-left: 14vw;
+}
+
+.cardo {
+  margin-top: 5vh;
+  border: none!important;
+  margin-left: 16vw!important;
+  width: 22vw!important;
+}
+
 .move {
   -webkit-transition: 2.5s;
   -o-transition: 2.5s;
@@ -189,9 +234,7 @@
 .ListPokeball {
   background-image: url("../../public/favicon.png") !important;
   background-size: cover !important;
-
   opacity: 0.3;
-
   position: absolute;
   z-index: 0;
   top: 0;
@@ -204,7 +247,9 @@
 .ui.icon.input input {
   border-radius: 2vw;
 }
+
 .ListButton {
   background-color: Transparent !important;
   color: black !important;
+
 }

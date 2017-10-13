@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Segment, Header, Image, Input, Button } from "semantic-ui-react";
+import spinner from "../img/source.gif";
 import NavBar from "./Navbar.jsx";
 import { browserHistory } from "react-router";
 
@@ -94,7 +95,7 @@ class ListPokemon extends Component {
               />
               <Segment className="ListSegment">
                 {!this.state.filtered
-                  ? <p>Chargement...</p>
+                  ? <Image className="spinner" src={spinner}></Image>
                   : <Grid className="ListGrid">
                       <Grid.Row columns={6}>
                         <br />{" "}

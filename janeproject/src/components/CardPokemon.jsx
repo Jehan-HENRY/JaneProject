@@ -74,30 +74,20 @@ class CardPokemon extends Component {
     console.log(this);
     const { path } = this.props.route;
     return (
-			<div>
+			<div className="cardpok">
 				<NavBar path={path} />
 			{this.state.requestFailed
 				? <p>Mince ça marche pas...</p>
       	: <div>{!this.state.pokemonOneData
 					? <p>Chargement...</p>
-					: <Card>
-          <Image src={this.generateImage(this.state.pokemonOneData.id)} />
-          <Card.Content>
-            <Card.Header>{this.capitalizeFirstLetter(this.state.pokemonOneData.name)}</Card.Header>
-            <Card.Meta>
-              <span>ID {this.state.pokemonOneData.id}</span>
-            </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              22 Friends
-            </a>
-          </Card.Content>
-        </Card>
+					:<div>
+      <p className="bigName">{this.capitalizeFirstLetter(this.state.pokemonOneData.name)}</p>
+      <p className="bigId">Id : {this.state.pokemonOneData.id}</p>
+      <p className="bigType">Type : {this.state.pokemonOneData.types[0].type.name} {this.state.pokemonOneData.types[1] ? ("- " + this.state.pokemonOneData.types[1].type.name) : null} </p>
+
+          <Image className="cardo" style={{height:"37vh", backgroundColor:"transparent"}} src={this.generateImage(this.state.pokemonOneData.id)} />
+
+          </div>
 			}
 		</div>
 		 }
