@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Segment, Header, Image, Input } from "semantic-ui-react";
+import { Grid, Segment, Header, Image, Input, Button } from "semantic-ui-react";
 import NavBar from "./Navbar.jsx";
+import { browserHistory } from "react-router";
 
 const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=811`;
 
@@ -23,7 +24,7 @@ class ListPokemon extends Component {
     fetch(urlForPokemon())
       .then(response => {
         if (!response.ok) {
-          throw Error("Les Pokémon ne sont pas venus, ils boudent...");
+          throw Error("Les Pokémons ne sont pas venus, ils boudent...");
         }
         return response;
       })
@@ -60,7 +61,7 @@ class ListPokemon extends Component {
         search: event.target.value
       },
       () => {
-        this.updateResult;
+        this.updateResult();
       }
     );
   }
@@ -78,57 +79,70 @@ class ListPokemon extends Component {
   }
 
   render() {
-
-
+    console.log(this);
     const { path } = this.props.route;
     return (
       <div>
         <NavBar path={path} />
+        {this.state.requestFailed
+          ? <p>Mince ça marche pas...</p>
+          : <div>
+              <Input
+                className="ListSearch"
+                size="large"
+                icon="search"
+                type="text"
+                placeholder="Chercher..."
+                value={this.state.search}
+                onChange={this.updateInput}
+              />
 
-        {this.state.requestFailed ? <p>Mince ça marche pas...</p>:
-<div>
-        <Input
-          className="ListSearch"
-          size="large"
-          icon="search"
-          type="text"
-          placeholder="Chercher..."
-          value={this.state.search}
-          onChange={this.updateInput}
-        />
-
-        <Segment className="ListSegment">
-          {!this.state.pokemonData ?
-            <p>Chargement...</p> :
-          <Grid className="ListGrid">
-            <Grid.Row columns={6}>
-              <br />
-              {this.state.pokemonData.results.map((pokemon, index) =>
-                <Grid.Column key={index}>
-                  <Segment key={index} circular style={square}>
-                    <div className="ListPokeball" />
-                    <Image
-                      className="ListItemImage"
-                      src={this.generateImage(
-                        pokemon.url.match(/([0-9]+)/g)[1]
-                      )}
-                    />
-                    <Header className="ListItemHeader" as="h3">
-                      {this.capitalizeFirstLetter(pokemon.name)}
-                      <Header.Subheader>
-                        ID {pokemon.url.match(/([0-9]+)/g)[1]}
-                      </Header.Subheader>
-                    </Header>
-                  </Segment>
-                  <br />
-                </Grid.Column>
-              )}
-            </Grid.Row>
-          </Grid>
-        }
-        </Segment>
-  </div>
-      }
+              <Segment className="ListSegment">
+                {!this.state.pokemonData
+                  ? <p>Chargement...</p>
+                  : <Grid className="ListGrid">
+                      <Grid.Row columns={6}>
+                        <br />
+                        {this.state.search !== this.state.pokemonData
+                          ? this.state.pokemonData.results.map(
+                              (pokemon, index) =>
+                                <Grid.Column key={index}>
+                                  <Segment key={index} circular style={square}>
+                                    <Button
+                                      className="ListButton"
+                                      basic
+                                      onClick={() =>
+                                        browserHistory.push({
+                                          state: {
+                                            pokemonID: pokemon.url.match(
+                                              /([0-9]+)/g
+                                            )[1]
+                                          },
+                                          pathname: "/card"
+                                        })}
+                                    />
+                                    <div className="ListPokeball" />
+                                    <Image
+                                      className="ListItemImage"
+                                      src={this.generateImage(
+                                        pokemon.url.match(/([0-9]+)/g)[1]
+                                      )}
+                                    />
+                                    <Header className="ListItemHeader" as="h3">
+                                      {this.capitalizeFirstLetter(pokemon.name)}
+                                      <Header.Subheader>
+                                        ID {pokemon.url.match(/([0-9]+)/g)[1]}
+                                      </Header.Subheader>
+                                    </Header>
+                                  </Segment>
+                                  <br />
+                                </Grid.Column>
+                            )
+                          : null}
+                      </Grid.Row>
+                    </Grid>}
+              </Segment>
+            </div>}
       </div>
     );
   }

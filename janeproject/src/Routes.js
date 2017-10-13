@@ -5,7 +5,7 @@ import { Router,Route, IndexRoute } from 'react-router';
 import App from './App';
 import Home from './components/Home.jsx';
 import ListPokemon from './components/ListPokemon.jsx';
-import Card from './components/Card.jsx';
+import CardPokemon from './components/CardPokemon.jsx';
 
 
 export default() => (
@@ -13,7 +13,7 @@ export default() => (
   <Route path='/' component={App}>
   <IndexRoute component={Home}/>
   <Route path='list' component={ListPokemon}/>
-  <Route path='card' component={Card}/>
+  <Route path='card' component={CardPokemon}/>
 </Route>
 
 </Router>
