@@ -119,13 +119,13 @@
   color: white;
   font-size: 9em;
   margin-bottom: -4vh;
-  margin-top: 5vh!important;
+  margin-top: 5vh !important;
   margin-left: 14vw;
 }
 
 .fontNav {
-  color: white!important;
-  font-weight: 900!important;
+  color: white !important;
+  font-weight: 900 !important;
 }
 .spinner {
   margin-left: 26vw;
@@ -148,9 +148,9 @@
 
 .cardo {
   margin-top: 5vh;
-  border: none!important;
-  margin-left: 16vw!important;
-  width: 22vw!important;
+  border: none !important;
+  margin-left: 16vw !important;
+  width: 22vw !important;
 }
 
 .move {
@@ -202,10 +202,11 @@
 .ListPage {
   background-image: url("../img/background.jpg") !important;
   background-position: right !important;
-  background-repeat: no-repeat !important ;
+  background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   background-size: cover !important;
-  margin-top: -2vh;
+  margin-top: -2.1vh;
+  min-height: 30vh !important;
 }
 
 .ListSegment {
@@ -251,5 +252,4 @@
 .ListButton {
   background-color: Transparent !important;
   color: black !important;
-
 }
