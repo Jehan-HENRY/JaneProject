@@ -4,7 +4,6 @@ import {Menu} from 'semantic-ui-react';
 
 class NavBar extends Component {
   render() {
-    console.log(this);
     const {path}=this.props
      return (
       <Menu size="huge" style={{marginTop: "0px!important"}}>
