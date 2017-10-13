@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./Navbar.jsx";
-import { Grid, Segment, Header, Image, Card, Icon } from "semantic-ui-react";
+import { Image} from "semantic-ui-react";
 
 
 class CardPokemon extends Component {
@@ -81,6 +81,7 @@ class CardPokemon extends Component {
       	: <div>{!this.state.pokemonOneData
 					? <p>Chargement...</p>
 					:<div>
+            <p className="bigDes" >{this.state.pokemonSpeData.flavor_text_entries[5].flavor_text}</p>
       <p className="bigName">{this.capitalizeFirstLetter(this.state.pokemonOneData.name)}</p>
       <p className="bigId">Id : {this.state.pokemonOneData.id}</p>
       <p className="bigType">Type : {this.state.pokemonOneData.types[0].type.name} {this.state.pokemonOneData.types[1] ? ("- " + this.state.pokemonOneData.types[1].type.name) : null} </p>
