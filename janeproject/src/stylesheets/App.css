@@ -30,18 +30,18 @@
 
 .sovietFooter {
   position: fixed;
-  bottom: 0!important;
+  bottom: 0 !important;
   background-color: black;
   font-weight: 400;
-  color: yellow!important;
+  color: yellow !important;
 }
 
 .navbar {
   position: fixed;
-  top: 0!important;
-  background-color: #b10000!important;
+  top: 0 !important;
+  background-color: #b10000 !important;
   font-weight: 400;
-  color: yellow!important;
+  color: yellow !important;
 }
 
 .pusher {
@@ -58,7 +58,7 @@
 
 .welcome1 {
   z-index: 999;
-  position: absolute!important;
+  position: absolute !important;
   height: 100vh;
   margin-left: 0vw;
   width: 50.581vw;
@@ -72,7 +72,7 @@
 
 .welcome2 {
   z-index: 999;
-  position: absolute!important;
+  position: absolute !important;
   margin-left: 49.815vw;
   margin-top: -3vh;
   height: 100vh;
@@ -84,7 +84,7 @@
 
 .welcome1bis {
   z-index: 999;
-  position: absolute!important;
+  position: absolute !important;
   height: 100vh;
   margin-left: -53vw;
   width: 50.5vw;
@@ -97,7 +97,7 @@
 
 .welcome2bis {
   z-index: 999;
-  position: absolute!important;
+  position: absolute !important;
   margin-left: 105vw;
   height: 100vh;
   width: 51vw;
@@ -156,6 +156,11 @@
 
 .ListSegment {
   margin: 2vh 3vw 5vh 3vw !important;
+  /*background-image: url("../img/background2.jpg") !important;*/
+  /*background-position: right !important;*/
+  /*background-repeat: no-repeat !important ;
+  background-attachment: fixed !important;
+  background-size: cover !important;*/
 }
 
 .ListGrid {
@@ -176,17 +181,32 @@
 }
 
 .ListPokeball {
-  background-image: url("../img/pokeball.png") !important;
+  background-image: url("../../public/favicon.png") !important;
   background-size: cover !important;
-  opacity: 0.4;
+
+  opacity: 0.3;
+
   position: absolute;
   z-index: 0;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
+  border-radius: 6vw;
 }
 
 .ui.icon.input input {
   border-radius: 2vw;
+}
+.ListButton {
+  position: absolute;
+  z-index: 1;
+  height: 27vh !important;
+  width: 13vw !important;
+  border-radius: 7vw !important;
+  right: -0.4vw !important;
+  bottom: 0vh;
+}
+.ui.basic.button:hover, .ui.basic.buttons .button:hover {
+  background: #11ffee00 !important;
 }

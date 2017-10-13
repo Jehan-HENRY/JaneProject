@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import {Grid, Segment, Header, Image, Input} from "semantic-ui-react";
+import { Grid, Segment, Header, Image, Input, Button } from "semantic-ui-react";
 import NavBar from "./Navbar.jsx";
+import { browserHistory } from "react-router";
 
 const urlForPokemon = () => `https://pokeapi.co/api/v2/pokemon/?limit=811`;
 
@@ -25,7 +26,7 @@ class ListPokemon extends Component {
 componentDidMount() {
   fetch(urlForPokemon()).then(response => {
     if (!response.ok) {
-      throw Error("Les Pokémon ne sont pas venus, ils boudent...");
+      throw Error("Les Pokémons ne sont pas venus, ils boudent...");
     }
     return response;
   }).then(d => d.json()).then(d => {
@@ -54,7 +55,7 @@ componentDidMount() {
     this.setState({
       filtered:{
         results: newRes
-      } 
+      }
     })
   }
 
@@ -71,7 +72,6 @@ componentDidMount() {
             ? <p>Mince ça marche pas...</p>
             : <div>
               <Input className="ListSearch" size="large" icon="search" type="text" placeholder="Chercher..." value={this.state.search} onChange={this.updateInput}/>
-
               <Segment className="ListSegment">
                 {!this.state.filtered
                   ? <p>Chargement...</p>
@@ -79,6 +79,19 @@ componentDidMount() {
                     <Grid.Row columns={6}>
                       <br/> {this.state.filtered.results.map((pokemon, index) => <Grid.Column key={index}>
                         <Segment key={index} circular style={square}>
+                          <Button
+                             className="ListButton"
+                             basic
+                             onClick={() =>
+                              browserHistory.push({
+                                 state: {
+                                     pokemonID: pokemon.url.match(
+                                     /([0-9]+)/g
+                                     )[1]
+                                 },
+                                 pathname: "/card"
+                               })}
+                           />
                           <div className="ListPokeball"/>
                           <Image className="ListItemImage" src={this.generateImage(pokemon.url.match(/([0-9]+)/g)[1])}/>
                           <Header className="ListItemHeader" as="h3">
